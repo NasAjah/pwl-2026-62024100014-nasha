@@ -11,8 +11,11 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
-// Named routes untuk navigasi
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/pasien', [PatientController::class, 'index'])->name('pasien.index');
+
+// Resource Routes untuk CRUD Pasien dan Poli
+Route::resource('pasien', PatientController::class);
+Route::resource('poli', PoliController::class);
+
+// Read-only / CRUD Dokter dari praktikum sebelumnya
 Route::get('/dokter', [DoctorController::class, 'index'])->name('dokter.index');
-Route::get('/poli', [PoliController::class, 'index'])->name('poli.index');
