@@ -17,5 +17,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('pasien', PatientController::class);
 Route::resource('poli', PoliController::class);
 
-// Read-only / CRUD Dokter dari praktikum sebelumnya
-Route::get('/dokter', [DoctorController::class, 'index'])->name('dokter.index');
+// Ubah rute dokter menggunakan resource agar rute create, store, edit, dll otomatis terbuat
+Route::resource('dokter', DoctorController::class);

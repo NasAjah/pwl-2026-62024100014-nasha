@@ -34,6 +34,9 @@
                 @endif
             </td>
             <td>
+                <!-- Ini tombol Detail yang ditambahkan -->
+                <a href="{{ route('poli.show', $poli->id) }}" style="background-color: #17a2b8; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; font-size: 13px; margin-right: 5px;">Detail</a>
+
                 <a href="{{ route('poli.edit', $poli->id) }}" style="background-color: #ffc107; color: #212529; padding: 5px 10px; text-decoration: none; border-radius: 3px; font-size: 13px; margin-right: 5px;">Edit</a>
                 
                 <form action="{{ route('poli.destroy', $poli->id) }}" method="POST" style="display: inline-block;">
